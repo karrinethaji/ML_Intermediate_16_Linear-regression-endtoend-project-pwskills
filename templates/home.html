@@ -1,0 +1,28 @@
+<html>
+<body>
+    <div class="login">
+       <h1>FWI Prediction</h1>
+   
+        <!-- Main Input For Receiving Query to our ML -->
+
+        <!-- Once we clicked on submit button, the values will be passed to predict_datapoint function (url_for('predict_datapoint')) with method==POST, then if block will be executed in the application.py file-->
+       <form action="{{ url_for('predict_datapoint')}}" method="post"> <!-- method == post , it used to post the values of below parameters once we click on submit button to predict_datapoint function-->
+         <input type="text" name="temp" placeholder="Temperature" required="required" /><br>
+           <input type="text" name="rh" placeholder="RH" required="required" /><br>
+           <input type="text" name="ws" placeholder="Ws" required="required" /><br>
+           <input type="text" name="rain" placeholder="Rain" required="required" /><br>
+           <input type="text" name="ffmc" placeholder="FFMC" required="required" /><br>
+           <input type="text" name="dmc" placeholder="DMC" required="required" /><br>
+           <input type="text" name="isi" placeholder="ISI" required="required" /><br>
+           <input type="text" name="classes" placeholder="Classes" required="required" /><br>
+           <input type="text" name="region" placeholder="Region" required="required" /><br>
+
+
+
+           <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+       </form>
+    <h2>
+       THE FWI prediction is {{result}} <!-- result value will be replaced with prediction value, check in the application.py file-->
+    </h2>
+   <body>
+</html>
